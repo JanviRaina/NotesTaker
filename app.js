@@ -1,14 +1,15 @@
 showNotes()
-//We will be adding some event listeners here.If users enters a note,ente rit to local storage
+//We will be adding some event listeners here.If users enters a note,enter it to local storage
 let addBtn = document.getElementById('addBtn');
-//we will store notes in form of array so we ll have to parse it 
+//we will store notes in form of array so we'll have to parse it 
 addBtn.addEventListener('click', function (e) {
     let addTxt = document.getElementById('addTxt');
     let notes = localStorage.getItem('notes');
     if (notes == null) {
-        notesObj = [];           //if for 1st time
+        notesObj = [];                                                               //if for 1st time
     }
-    else {
+    else 
+    {
         notesObj = JSON.parse(notes);
     }
     notesObj.push(addTxt.value);
@@ -23,7 +24,8 @@ function showNotes() {
     if (notes == null) {
         notesObj = [];
     }
-    else {
+    else 
+    {
         notesObj = JSON.parse(notes);
     }
     let html="";
@@ -58,7 +60,7 @@ function deleteNote(index)
     else {
         notesObj = JSON.parse(notes);
     }
-    notesObj.splice(index,1);          //(starting,no. of elements to remove)
+    notesObj.splice(index,1);                                          //(starting,no. of elements to remove)
     localStorage.setItem('notes',JSON.stringify(notesObj))
     showNotes();
 }
@@ -66,11 +68,11 @@ function deleteNote(index)
 let search=document.getElementById('searchTxt');
 search.addEventListener('input',function()
 {
-    let inputVal=search.value;            //whatever the person searches
-    let noteCards=document.getElementsByClassName('noteCard');       //get all noteCards
-    Array.from(noteCards).forEach(function(element)                       //form an array outta it
+    let inputVal=search.value;                                          //whatever the person searches
+    let noteCards=document.getElementsByClassName('noteCard');          //get all noteCards
+    Array.from(noteCards).forEach(function(element)                     //form an array outta it
     {
-        let cardTxt=element.getElementsByTagName('p')[0].innerText;                  //save it in cardTxt
+        let cardTxt=element.getElementsByTagName('p')[0].innerText;     //save it in cardTxt
         if(cardTxt.includes(inputVal))
         {
             element.style.display="block";
@@ -80,9 +82,5 @@ search.addEventListener('input',function()
         }
 
     })
-
 })
-
-
-
 
