@@ -5,4 +5,4 @@ Features:
 2)Deleting Node
 3)Retrieving whenever needed.
 
-![Block Diagram](images/Note Taker.png)
+![Block Diagram](images/NoteTaker.png)
