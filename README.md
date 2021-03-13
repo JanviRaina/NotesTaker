@@ -4,3 +4,5 @@ Features:
 1)Adding Note
 2)Deleting Node
 3)Retrieving whenever needed.
+
+![Block Diagram](images/Note Taker.png)
